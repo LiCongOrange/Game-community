@@ -18,9 +18,9 @@
 		<div class="design-w3l">
 			<div class="mail-form-agile">
 				<form action="/user/login" method="post">
-					<input type="text" name="uname" placeholder="请输入账号或者邮箱" required=""/>
-					<input type="password"  name="upwd" class="padding" placeholder="请输入密码" required=""/>
-					<input type="submit" value="登录">
+					<input type="text" name="uname" placeholder="请输入账号或者邮箱" required="" id="uname"/>
+					<input type="password"  name="upwd" class="padding" placeholder="请输入密码" required="" id="upwd"/>
+					<input type="submit" value="登录" id="btn">
 					<a href="user_reg.html" class="zc">注册</a>
 				</form>
 			</div>
@@ -31,5 +31,19 @@
 		<p>版权所有©2018。个人网站保留所有权利。  <a href="index.html" >游戏社区首页</a></p>
 		</div>
 	</div>
+	<script>
+		var btn = document.getElementById("btn");
+		var uname = document.getElementById("uname");
+		btn.onclick = function(){
+		 //1:将用户名保存 sessionStorage
+		 //条件 是否登录
+		 sessionStorage.setItem("uname",uname.value);
+		 //2:3s跳转index.html
+		 alert("3s后跳转首页");
+		 setTimeout(function(){
+			location.href = "index.html";
+		 },3000);
+		}
+	  </script>
 </body>
 </html>

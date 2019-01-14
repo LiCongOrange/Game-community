@@ -12,6 +12,13 @@
 	<!--// css -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.js"></script>
+	<style>
+			#welcome{
+			  text-align: right;
+			  color:#fff;
+			  font-size:15px;
+			}
+	   </style>
 <body>
 <!-- Header -->
 <div class="header">
@@ -36,7 +43,7 @@
 					<li class="hover-effect"><a href="games.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">游戏</font></font></a></li>
 					<li class="hover-effect"><a href="news.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">新闻</font></font></a></li>
 					<li class="hover-effect"><a href="contact.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">联系</font></font></a></li>
-					<li class="hover-effect"><a href="user_login.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">登录</font></font></a></li>
+					<li class="hover-effect" id="welcome"><a href="user_login.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">登录</font></font></a></li>
 				</ul>
 			</div>
 
@@ -380,4 +387,13 @@
 		</div>
 	</div>
 </div>
-</circle></svg></div></div></body></html>
+</circle></svg></div></div>
+<script>
+	var uname = sessionStorage.getItem("uname");
+	var welcome = document.getElementById("welcome");
+	if(uname){
+	  var html = "欢迎回来:"+uname+" <a href='user_logout.html'>退出</a>";
+	  welcome.innerHTML = html;
+	}
+  </script>
+</body></html>
