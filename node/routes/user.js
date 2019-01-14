@@ -60,9 +60,10 @@ router.post('/login',function(req,res){
     if(err) throw err;
     //查询的结果是数组
 	if(result.length>0){
-	  res.send({code:200,msg:'login success'});
+    
 	}else{
-	  res.send({code:301,msg:'uname or upwd error'});
+    res.send({code:301,msg:'uname or upwd error'});
+    
 	}
   });
 
